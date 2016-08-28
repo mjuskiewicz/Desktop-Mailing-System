@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopMailingSystem.Shell"
         mc:Ignorable="d"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:inf="clr-namespace:DesktopMailingSystem.Infrastructure;assembly=DesktopMailingSystem.Infrastructure"
         Title="Desktop Mailing System" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ShellMenuRegion}" />
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.ShellContentRegion}" />
+    </StackPanel>
 </Window>

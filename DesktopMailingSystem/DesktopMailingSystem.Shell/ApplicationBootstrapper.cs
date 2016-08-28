@@ -1,9 +1,6 @@
-﻿using Prism.Unity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DesktopMailingSystem.UI;
+using Prism.Unity;
+using Prism.Modularity;
 using System.Windows;
 
 namespace DesktopMailingSystem.Shell
@@ -31,8 +28,8 @@ namespace DesktopMailingSystem.Shell
         {
             base.ConfigureModuleCatalog();
 
-            //ModuleCatalog catalog = (ModuleCatalog)ModuleCatalog;
-            //catalog.AddModule(typeof(UsersModule));
+            ModuleCatalog catalog = (ModuleCatalog)ModuleCatalog;
+            catalog.AddModule(typeof(UIModule));
         }
     }
 }
