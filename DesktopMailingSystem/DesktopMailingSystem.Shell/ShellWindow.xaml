@@ -9,7 +9,9 @@
         xmlns:inf="clr-namespace:DesktopMailingSystem.Infrastructure;assembly=DesktopMailingSystem.Infrastructure"
         Title="Desktop Mailing System" Height="350" Width="525">
     <StackPanel>
-        <Ribbon x:Name="RibbonWin"  SelectedIndex="0" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ShellMenuRegion}" />
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0">
+            <RibbonTab Header="Home tab" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ShellMenuRegion}"/>
+        </Ribbon>
         <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.ShellContentRegion}" />
     </StackPanel>
 </Window>
