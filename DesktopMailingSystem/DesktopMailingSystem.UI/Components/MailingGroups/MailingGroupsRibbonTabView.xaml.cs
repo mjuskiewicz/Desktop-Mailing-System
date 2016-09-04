@@ -5,9 +5,9 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
     /// <summary>
     /// Interaction logic for MailingListRibbonTab.xaml
     /// </summary>
-    public partial class MailingListRibbonTab : RibbonGroup
+    public partial class MailingListRibbonTabView : RibbonGroup
     {
-        public MailingListRibbonTab()
+        public MailingListRibbonTabView()
         {
             InitializeComponent();
         }
