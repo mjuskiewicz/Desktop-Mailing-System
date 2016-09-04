@@ -21,13 +21,11 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
         public void ShowListOfGroups()
         {
             _regionManager.RequestNavigate(RegionNames.ShellContentRegion, "MailingGroupsListView", NavigationCompleted);
-            //_regionManager.RegisterViewWithRegion(RegionNames.ShellContentRegion, () => new MailingGroupsListView());
-            //_regionManager.AddToRegion(RegionNames.ShellContentRegion, new MailingGroupsListView());
         }
 
         private void NavigationCompleted(NavigationResult result)
         {
-            MessageBox.Show("asd");
+            MessageBox.Show("The request was completed.");
         }
     }
 }

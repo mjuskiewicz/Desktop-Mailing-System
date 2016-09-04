@@ -26,7 +26,7 @@ namespace DesktopMailingSystem.UI
 
             BindViewModelToView<MailingGroupsRibbonTabViewModel, MailingListRibbonTabView>();
 
-            _regionViewRegistry.RegisterViewWithRegion(RegionNames.ShellMenuRegion, typeof(Components.MailingGroups.MailingListRibbonTabView));
+            _regionViewRegistry.RegisterViewWithRegion(RegionNames.ShellMenuRegion, typeof(MailingListRibbonTabView));
 
         }
 
