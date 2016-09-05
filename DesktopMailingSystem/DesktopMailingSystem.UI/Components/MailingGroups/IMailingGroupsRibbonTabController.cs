@@ -3,5 +3,7 @@
     public interface IMailingGroupsRibbonTabController
     {
         void ShowListOfGroups();
+
+        void ShowFormToAddNewGroup();
     }
 }

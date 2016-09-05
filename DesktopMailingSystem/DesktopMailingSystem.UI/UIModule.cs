@@ -21,13 +21,18 @@ namespace DesktopMailingSystem.UI
         public void Initialize()
         {
             _container.RegisterType<MailingGroupsRibbonTabViewModel>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<MailingGroupsListViewModel>(new ContainerControlledLifetimeManager());
+
             _container.RegisterType<IMailingGroupsRibbonTabController, MailingGroupsRibbonTabController>();
-            _container.RegisterType<object, MailingGroupsListView>("MailingGroupsListView");            
+            _container.RegisterType<IMailingGroupsListController, MailingGroupsListController>();
 
-            BindViewModelToView<MailingGroupsRibbonTabViewModel, MailingListRibbonTabView>();
+            _container.RegisterType<object, MailingGroupsListView>("MailingGroupsListView");
+            _container.RegisterType<object, MailingGroupsNewView>("MailingGroupsNewView");
 
-            _regionViewRegistry.RegisterViewWithRegion(RegionNames.ShellMenuRegion, typeof(MailingListRibbonTabView));
+            BindViewModelToView<MailingGroupsRibbonTabViewModel, MailingGroupsRibbonTabView>();
+            BindViewModelToView<MailingGroupsListViewModel, MailingGroupsListView>();
 
+            _regionViewRegistry.RegisterViewWithRegion(RegionNames.ShellMenuRegion, typeof(MailingGroupsRibbonTabView));
         }
 
         private void BindViewModelToView<TViewModel, TView>()

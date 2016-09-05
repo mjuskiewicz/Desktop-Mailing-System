@@ -77,9 +77,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\MailingGroups\IMailingGroupsListController.cs" />
     <Compile Include="Components\MailingGroups\IMailingGroupsRibbonTabController.cs" />
+    <Compile Include="Components\MailingGroups\MailingGroupsListController.cs" />
     <Compile Include="Components\MailingGroups\MailingGroupsListView.xaml.cs">
       <DependentUpon>MailingGroupsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MailingGroups\MailingGroupsListViewModel.cs" />
+    <Compile Include="Components\MailingGroups\MailingGroupsNewView.xaml.cs">
+      <DependentUpon>MailingGroupsNewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\MailingGroups\MailingGroupsRibbonTabController.cs" />
     <Compile Include="Components\MailingGroups\MailingGroupsRibbonTabView.xaml.cs">
@@ -101,6 +107,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="Components\MailingGroups\MailingGroupsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\MailingGroups\MailingGroupsNewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

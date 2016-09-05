@@ -8,6 +8,8 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
     public class MailingGroupsRibbonTabController : IMailingGroupsRibbonTabController
     {
         private readonly IRegionManager _regionManager;
+        private int _showListOfGroupsCounter = 0;
+
         public MailingGroupsRibbonTabController(IRegionManager regionManager)
         {
             if (regionManager == null)
@@ -18,9 +20,18 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
             _regionManager = regionManager;
         }
 
+        public void ShowFormToAddNewGroup()
+        {
+            _regionManager.RequestNavigate(RegionNames.ShellContentRegion, "MailingGroupsNewView", NavigationCompleted);
+        }
+
         public void ShowListOfGroups()
         {
-            _regionManager.RequestNavigate(RegionNames.ShellContentRegion, "MailingGroupsListView", NavigationCompleted);
+            _showListOfGroupsCounter++;
+            var parameters = new NavigationParameters();
+            parameters.Add("counter", _showListOfGroupsCounter);
+
+            _regionManager.RequestNavigate(RegionNames.ShellContentRegion, "MailingGroupsListView", NavigationCompleted, parameters);
         }
 
         private void NavigationCompleted(NavigationResult result)
