@@ -32,6 +32,8 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
             parameters.Add("counter", _showListOfGroupsCounter);
 
             _regionManager.RequestNavigate(RegionNames.ShellContentRegion, "MailingGroupsListView", NavigationCompleted, parameters);
+            //_regionManager.RegisterViewWithRegion(RegionNames.ShellContentRegion, () => new MailingGroupsListView());
+            //_regionManager.AddToRegion(RegionNames.ShellContentRegion, new MailingGroupsListView());
         }
 
         private void NavigationCompleted(NavigationResult result)
