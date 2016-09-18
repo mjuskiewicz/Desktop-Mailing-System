@@ -62,6 +62,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -102,6 +103,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DesktopMailingSystem.Contracts\DesktopMailingSystem.Contracts.csproj">
+      <Project>{0372a802-2007-4723-bb80-7b7ec7d0de91}</Project>
+      <Name>DesktopMailingSystem.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DesktopMailingSystem.Infrastructure\DesktopMailingSystem.Infrastructure.csproj">
       <Project>{7d0fb54a-0ca5-440f-926a-e8e70f8e5dc3}</Project>
       <Name>DesktopMailingSystem.Infrastructure</Name>
