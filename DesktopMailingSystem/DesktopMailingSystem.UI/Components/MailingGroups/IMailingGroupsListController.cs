@@ -1,6 +1,8 @@
-﻿namespace DesktopMailingSystem.UI.Components.MailingGroups
+﻿using DesktopMailingSystem.Infrastructure;
+
+namespace DesktopMailingSystem.UI.Components.MailingGroups
 {
-    public interface IMailingGroupsListController
+    public interface IMailingGroupsListController : IBaseController<IMailingGroupsListViewModel>
     {
     }
 }

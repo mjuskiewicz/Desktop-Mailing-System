@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 
 namespace DesktopMailingSystem.Infrastructure
 {
-    public class BaseViewModel<T>
+    public class BaseViewModel<T> : BindableBase
     {
         private readonly T _controller;
 

@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\MailingGroups\IMailingGroupsListController.cs" />
+    <Compile Include="Components\MailingGroups\IMailingGroupsListViewModel.cs" />
     <Compile Include="Components\MailingGroups\IMailingGroupsNewController.cs" />
     <Compile Include="Components\MailingGroups\IMailingGroupsRibbonTabController.cs" />
     <Compile Include="Components\MailingGroups\MailingGroupsListController.cs" />

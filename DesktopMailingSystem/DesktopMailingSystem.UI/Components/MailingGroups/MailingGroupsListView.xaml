@@ -7,8 +7,16 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
+             xmlns:viewModel="clr-namespace:DesktopMailingSystem.UI.Components.MailingGroups"
+             d:DataContext="{d:DesignInstance viewModel:IMailingGroupsListViewModel, IsDesignTimeCreatable=False}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <StackPanel>
         <TextBlock Text="List of all available groups" />
-    </Grid>
+        <DataGrid ItemsSource="{Binding MailingGroups}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
 </UserControl>

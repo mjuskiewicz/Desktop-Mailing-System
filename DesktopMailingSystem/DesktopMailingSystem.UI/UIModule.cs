@@ -49,7 +49,7 @@ namespace DesktopMailingSystem.UI
         {
             var mailingGroupsServiceFactory = new ChannelFactory<IMailingGroupsService>("MailingGroupsServiceEndPointConfig");
 
-            _container.RegisterInstance<IMailingGroupsService>(mailingGroupsServiceFactory.CreateChannel());
+            _container.RegisterInstance(mailingGroupsServiceFactory.CreateChannel());
         }
     }
 }

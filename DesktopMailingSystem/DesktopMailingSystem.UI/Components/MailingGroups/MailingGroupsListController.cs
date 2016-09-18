@@ -1,13 +1,22 @@
 ﻿using DesktopMailingSystem.Contracts;
+using DesktopMailingSystem.Infrastructure;
 
 namespace DesktopMailingSystem.UI.Components.MailingGroups
 {
-    public class MailingGroupsListController : IMailingGroupsListController
+    public class MailingGroupsListController : BaseController<IMailingGroupsListViewModel>, IMailingGroupsListController
     {
+        IMailingGroupsService _mailingGroupsService;
+
         public MailingGroupsListController(IMailingGroupsService mailingGroupsService)
         {
-            var groups = mailingGroupsService.GetAllMailingGroups();
-            var count = groups.Count;
+            _mailingGroupsService = mailingGroupsService;
+        }
+
+        protected override void OnViewModelAssigned()
+        {
+            base.OnViewModelAssigned();
+
+            ViewModel.MailingGroups = _mailingGroupsService.GetAllMailingGroups();
         }
     }
 }
