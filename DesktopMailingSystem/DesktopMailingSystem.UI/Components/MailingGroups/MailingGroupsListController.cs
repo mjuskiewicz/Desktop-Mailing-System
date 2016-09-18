@@ -1,19 +1,13 @@
 ﻿using DesktopMailingSystem.Contracts;
-using System.ServiceModel;
 
 namespace DesktopMailingSystem.UI.Components.MailingGroups
 {
     public class MailingGroupsListController : IMailingGroupsListController
     {
-        public MailingGroupsListController()
+        public MailingGroupsListController(IMailingGroupsService mailingGroupsService)
         {
-            using (var c = new ChannelFactory<IMailingGroupsService>("MailingGroupsServiceEndPointConfig"))
-            {
-                var s = c.CreateChannel();
-                var groups = s.GetAllMailingGroups();
-
-                var count = groups.Count;
-            }
+            var groups = mailingGroupsService.GetAllMailingGroups();
+            var count = groups.Count;
         }
     }
 }

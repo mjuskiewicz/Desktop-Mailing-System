@@ -1,9 +1,11 @@
-﻿using DesktopMailingSystem.Infrastructure;
+﻿using DesktopMailingSystem.Contracts;
+using DesktopMailingSystem.Infrastructure;
 using DesktopMailingSystem.UI.Components.MailingGroups;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
+using System.ServiceModel;
 
 namespace DesktopMailingSystem.UI
 {
@@ -20,6 +22,8 @@ namespace DesktopMailingSystem.UI
 
         public void Initialize()
         {
+            RegisterServices();
+
             _container.RegisterType<MailingGroupsRibbonTabViewModel>(new ContainerControlledLifetimeManager());
             _container.RegisterType<MailingGroupsListViewModel>(new ContainerControlledLifetimeManager());
 
@@ -39,6 +43,13 @@ namespace DesktopMailingSystem.UI
         private void BindViewModelToView<TViewModel, TView>()
         {
             ViewModelLocationProvider.Register(typeof(TView).ToString(), () => _container.Resolve<TViewModel>());
+        }
+
+        private void RegisterServices()
+        {
+            var mailingGroupsServiceFactory = new ChannelFactory<IMailingGroupsService>("MailingGroupsServiceEndPointConfig");
+
+            _container.RegisterInstance<IMailingGroupsService>(mailingGroupsServiceFactory.CreateChannel());
         }
     }
 }
