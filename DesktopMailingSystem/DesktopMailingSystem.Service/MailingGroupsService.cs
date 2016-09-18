@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopMailingSystem.Contracts.DTO;
+using DesktopMailingSystem.Contracts;
 
 namespace DesktopMailingSystem.Service
 {

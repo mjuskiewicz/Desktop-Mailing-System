@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 
-namespace DesktopMailingSystem.Service
+namespace DesktopMailingSystem.Contracts
 {
     [ServiceContract]
     public interface IMailingGroupsService

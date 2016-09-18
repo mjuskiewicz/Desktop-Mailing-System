@@ -1,5 +1,4 @@
-﻿using DesktopMailingSystem.Service;
-using System;
+﻿using DesktopMailingSystem.Contracts;
 using System.ServiceModel;
 
 namespace DesktopMailingSystem.UI.Components.MailingGroups
@@ -8,9 +7,7 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
     {
         public MailingGroupsListController()
         {
-            Uri mailingGroupsServiceEndPointAddress = new Uri("http://localhost:2222/mailingGroupsService");
-
-            using(var c = new ChannelFactory<IMailingGroupsService>(new BasicHttpBinding(), new EndpointAddress(mailingGroupsServiceEndPointAddress)))
+            using (var c = new ChannelFactory<IMailingGroupsService>("MailingGroupsServiceEndPointConfig"))
             {
                 var s = c.CreateChannel();
                 var groups = s.GetAllMailingGroups();
