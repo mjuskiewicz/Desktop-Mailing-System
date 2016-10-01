@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopMailingSystem.Contra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopMailingSystem.Service", "DesktopMailingSystem.Service\DesktopMailingSystem.Service.csproj", "{925D951F-8015-44D3-85BB-FCAEF55DF922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopMailingSystem.Data", "DesktopMailingSystem.Data\DesktopMailingSystem.Data.csproj", "{1BCED445-AB9F-4A13-B433-E4E4F1B7DB8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{925D951F-8015-44D3-85BB-FCAEF55DF922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{925D951F-8015-44D3-85BB-FCAEF55DF922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{925D951F-8015-44D3-85BB-FCAEF55DF922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCED445-AB9F-4A13-B433-E4E4F1B7DB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCED445-AB9F-4A13-B433-E4E4F1B7DB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCED445-AB9F-4A13-B433-E4E4F1B7DB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCED445-AB9F-4A13-B433-E4E4F1B7DB8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
