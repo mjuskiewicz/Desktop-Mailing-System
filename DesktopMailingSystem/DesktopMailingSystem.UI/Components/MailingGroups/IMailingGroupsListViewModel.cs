@@ -5,6 +5,6 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
 {
     public interface IMailingGroupsListViewModel
     {
-        List<MailingGroup> MailingGroups { get; set; }
+        IList<MailingGroup> MailingGroups { get; set; }
     }
 }

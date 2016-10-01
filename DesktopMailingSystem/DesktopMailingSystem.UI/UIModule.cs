@@ -1,6 +1,7 @@
 ﻿using DesktopMailingSystem.Contracts;
 using DesktopMailingSystem.Infrastructure;
 using DesktopMailingSystem.UI.Components.MailingGroups;
+using DesktopMailingSystem.UI.Components.MailingGroups.Services;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Mvvm;
@@ -49,7 +50,9 @@ namespace DesktopMailingSystem.UI
         {
             var mailingGroupsServiceFactory = new ChannelFactory<IMailingGroupsService>("MailingGroupsServiceEndPointConfig");
 
-            _container.RegisterInstance(mailingGroupsServiceFactory.CreateChannel());
+            var mailingGroupsService = mailingGroupsServiceFactory.CreateChannel();
+                
+            _container.RegisterInstance<IMailingGroupsServiceClient>(new MailingGroupsServiceClient(mailingGroupsService));
         }
     }
 }

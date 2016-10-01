@@ -1,13 +1,15 @@
-﻿using DesktopMailingSystem.Contracts;
-using DesktopMailingSystem.Infrastructure;
+﻿using DesktopMailingSystem.Infrastructure;
+using DesktopMailingSystem.UI.Components.MailingGroups.Services;
+using System;
+using System.Reactive.Linq;
 
 namespace DesktopMailingSystem.UI.Components.MailingGroups
 {
     public class MailingGroupsListController : BaseController<IMailingGroupsListViewModel>, IMailingGroupsListController
     {
-        IMailingGroupsService _mailingGroupsService;
+        IMailingGroupsServiceClient _mailingGroupsService;
 
-        public MailingGroupsListController(IMailingGroupsService mailingGroupsService)
+        public MailingGroupsListController(IMailingGroupsServiceClient mailingGroupsService)
         {
             _mailingGroupsService = mailingGroupsService;
         }
@@ -16,7 +18,10 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
         {
             base.OnViewModelAssigned();
 
-            ViewModel.MailingGroups = _mailingGroupsService.GetAllMailingGroups();
+            _mailingGroupsService.GetAllMailingGroups().Subscribe(listOfMailingGroups =>
+            {
+                ViewModel.MailingGroups = listOfMailingGroups;
+            });
         }
     }
 }

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DesktopMailingSystem.Infrastructure.Themes">
+    <SolidColorBrush x:Key="dmsBlueBrush2" Color="#16D7E0" />
+    <SolidColorBrush x:Key="dmsBlueBrush" Color="#429897" />
+    <SolidColorBrush x:Key="dmsGrayBrush" Color="#ADC4CC" />
+    <SolidColorBrush x:Key="dmsGrayBrush2" Color="#F9FBFB" />
+    <SolidColorBrush x:Key="dmsGreenBrush" Color="#92B069" />
+    <SolidColorBrush x:Key="dmsOrangeBrush" Color="#E19D29" />
+    <SolidColorBrush x:Key="dmsRedBrush" Color="#DD5F32" />
+</ResourceDictionary>

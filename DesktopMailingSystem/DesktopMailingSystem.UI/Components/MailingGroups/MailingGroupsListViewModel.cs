@@ -8,9 +8,9 @@ namespace DesktopMailingSystem.UI.Components.MailingGroups
 {
     public class MailingGroupsListViewModel : BaseViewModel<IMailingGroupsListController>, IMailingGroupsListViewModel, INavigationAware
     {
-        private List<MailingGroup> _mailingGroups;
+        private IList<MailingGroup> _mailingGroups;
 
-        public List<MailingGroup> MailingGroups
+        public IList<MailingGroup> MailingGroups
         {
             get { return _mailingGroups; }
             set { SetProperty(ref _mailingGroups, value); }
